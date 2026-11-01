@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Педагог сквозь цифру — С. В. Павловская</title>
+<meta name="description" content="Интерактивный дашборд: результаты учителя биологии С. В. Павловской, СШ № 31, Гродно">
+<meta name="theme-color" content="#0B1A12">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Golos+Text:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--leaf:#5BE08F;--gold:#FFC83D;--stain:#B591FF;--rose:#FF7A9C;--ink:#F3FBF5;--mut:#B4CBBB;box-sizing:border-box}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:#0B1A12;font:400 17px/1.45 "Golos Text",system-ui,sans-serif}
+.sc{min-height:100svh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:calc(28px + env(safe-area-inset-top,0px)) 22px calc(70px + env(safe-area-inset-bottom,0px));max-width:820px;margin:0 auto;position:relative}
+.bg{position:fixed;inset:0;z-index:-1;transition:background 1s}
+h1,h2,.n{font-family:Unbounded,"Golos Text",sans-serif;font-weight:800;letter-spacing:-.02em;margin:0}
+h1{font-size:clamp(34px,9vw,64px);line-height:1.02}
+h2{font-size:clamp(22px,5.5vw,34px);line-height:1.1;margin-bottom:6px}
+.s{color:var(--mut);margin:0 0 22px}
+.n{font-size:clamp(54px,16vw,120px);line-height:1}
+.u{font-size:.4em}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.row .n{font-size:clamp(34px,10vw,64px)}
+.row p{margin:4px 0 0;color:var(--mut);font-size:14px;line-height:1.3}
+.dots{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+.dots i{width:clamp(32px,9vw,46px);aspect-ratio:1;border-radius:50%;border:3px solid var(--leaf);opacity:.35;transform:scale(.6);transition:.5s}
+.in .dots i.on{background:var(--leaf);opacity:1;transform:scale(1)}
+.in .dots i.g{background:var(--gold);border-color:var(--gold);opacity:1;transform:scale(1.12)}
+.in .dots i.o{opacity:.5;transform:scale(1)}
+svg{width:100%;height:auto;overflow:visible}
+svg text{fill:var(--mut);font:13px "Golos Text"}
+svg .v{fill:var(--ink);font:700 16px Unbounded,sans-serif}
+.bar{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.in .bar{transform:scaleY(1)}
+.hb{display:flex;height:38px;border-radius:12px;overflow:hidden;background:#ffffff22;margin:6px 0 18px}
+.hb b{width:0;display:flex;align-items:center;justify-content:center;color:#10201A;font:700 15px Unbounded,sans-serif;transition:width 1.2s .2s}
+.lg{display:flex;gap:16px;font-size:14px;color:var(--mut);flex-wrap:wrap}
+.lg span:before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;background:var(--c)}
+.top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:12px 0;border-bottom:1px solid #ffffff2a;opacity:0;transform:translateX(-20px);transition:.6s}
+.in .top{opacity:1;transform:none}
+.top b{font:800 26px Unbounded;color:var(--gold)}
+.tl{border-left:3px solid var(--stain);padding-left:20px;margin-left:6px}
+.tl div{position:relative;padding-bottom:18px;opacity:0;transform:translateY(14px);transition:.6s}
+.tl div:before{content:"";position:absolute;left:-30px;top:5px;width:15px;height:15px;border-radius:50%;background:var(--gold)}
+.in .tl div{opacity:1;transform:none}
+.tl em{font:normal 800 15px Unbounded;color:var(--gold);display:block}
+#pl{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:9;border:0;border-radius:30px;padding:12px 20px;background:var(--gold);color:#10201A;font:700 15px "Golos Text";cursor:pointer}
+#pb{position:fixed;left:0;top:0;height:4px;background:var(--leaf);width:0;z-index:9}
+.bg:after{content:"";position:absolute;inset:0;opacity:.08;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zM28 100L0 84V50M28 100l28-16V50' fill='none' stroke='%235BE08F' stroke-width='2'/%3E%3C/svg%3E")}
+.sc>*{position:relative;z-index:1}
+.sc:before{content:"";position:absolute;right:-70px;top:8%;width:240px;height:240px;border-radius:50%;border:3px solid #5BE08F40;background:radial-gradient(circle at 38% 40%,#B591FF55 0 13%,#B591FF22 14% 16%,transparent 17%),radial-gradient(circle at 68% 66%,#FFC83D40 0 7%,transparent 8%),radial-gradient(circle at 62% 28%,#5BE08F40 0 5%,transparent 6%),#5BE08F10;pointer-events:none;will-change:transform}
+.in:before{animation:fl 9s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(18px) rotate(12deg)}}
+.dots i{position:relative}
+.dots i:after{content:"";position:absolute;left:32%;top:30%;width:34%;height:34%;border-radius:50%;background:#10201A66}
+.dots i.g:after{background:#fff9}
+.dna{position:absolute!important;right:4%;top:10%;height:78%;width:84px;display:flex;flex-direction:column;justify-content:space-between;opacity:.55;z-index:0!important}
+.rg{display:flex;align-items:center;justify-content:space-between;animation:tw 3.2s ease-in-out infinite;animation-play-state:paused}
+.in .rg{animation-play-state:running}
+.rg i{width:13px;height:13px;border-radius:50%;background:var(--leaf)}
+.rg i:last-child{background:var(--gold)}
+.rg u{flex:1;height:2px;background:#ffffff55}
+@keyframes tw{0%,100%{transform:scaleX(1)}
+50%{transform:scaleX(.08)}}
+.sp{width:150px;margin:0 0 10px}
+.sp path{fill:none}
+.sp .st{stroke:var(--leaf);stroke-width:5;stroke-linecap:round;stroke-dasharray:110;stroke-dashoffset:110;transition:stroke-dashoffset 1.6s}
+.sp .lf{fill:var(--leaf);transform:scale(0);transform-box:fill-box;transition:transform .9s 1.3s}
+.sp .lf+.lf{transition-delay:1.7s;fill:#3FC477}
+.sp circle{fill:var(--gold);transform:scale(0);transform-box:fill-box;transform-origin:center;transition:transform .7s 2.1s}
+.in .sp .st{stroke-dashoffset:0}
+.in .sp .lf,.in .sp circle{transform:scale(1)}
+.src{font-size:12px;color:var(--mut);margin-top:18px}
+body:after{content:"";position:fixed;inset:0;z-index:8;pointer-events:none;opacity:.05;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.n{background:linear-gradient(120deg,#fff 10%,var(--leaf) 55%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.row>div{background:#ffffff10;border:1px solid #ffffff24;border-radius:24px;padding:18px 16px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 40px #0004}
+h2{text-shadow:0 2px 30px #0009}
+.top{background:#ffffff0f;border:1px solid #ffffff22;border-radius:18px;padding:14px 18px;margin-bottom:10px;backdrop-filter:blur(10px)}
+.hb{box-shadow:inset 0 0 0 1px #ffffff26,0 6px 24px #0004}
+.bar{will-change:transform}
+.bd{display:inline-block;padding:7px 15px;border-radius:30px;border:1px solid #5BE08F77;background:#5BE08F22;color:var(--leaf);font:600 13px "Golos Text";margin-bottom:20px;align-self:flex-start}
+#nv{position:fixed;left:8px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:9}
+#nv i{width:7px;height:7px;border-radius:6px;background:#ffffff44;transition:.35s;cursor:pointer}
+#nv i.a{background:var(--gold);height:26px}
+.hint{position:absolute!important;left:22px;bottom:calc(26px + env(safe-area-inset-bottom,0px));color:var(--mut);font-size:14px;animation:bn 2s ease-in-out infinite}
+@keyframes bn{50%{transform:translateY(9px)}}
+#pl{box-shadow:0 8px 28px #FFC83D66}
+#kp{position:fixed;left:0;right:0;top:0;z-index:9;display:flex;justify-content:center;gap:8px 18px;flex-wrap:wrap;padding:calc(8px + env(safe-area-inset-top,0px)) 14px 8px;font-size:12px;color:var(--mut);background:#0B1A12cc;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #ffffff1f;transform:translateY(-110%);transition:transform .5s}
+body.k #kp{transform:none}
+#kp b{color:var(--gold);font:800 13px Unbounded}
+.seg{display:inline-flex;padding:4px;border-radius:30px;background:#ffffff14;border:1px solid #ffffff26;margin-bottom:16px}
+.seg button{border:0;background:none;color:var(--mut);font:600 14px "Golos Text";padding:8px 20px;border-radius:24px;cursor:pointer;transition:.3s}
+.seg button.a{background:var(--leaf);color:#10201A}
+button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@keyframes pop{from{transform:scale(.2);opacity:0}}
+.dots i{animation:pop .5s backwards}
+#cv{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.row>div{transition:transform .25s ease-out;will-change:transform}
+#ol .hb b{transition:width 1.2s .2s,opacity .35s}
+#ol[data-f="0"] .hb b:not(:nth-child(1)),#ol[data-f="1"] .hb b:not(:nth-child(2)),#ol[data-f="2"] .hb b:not(:nth-child(3)){opacity:.15}
+.lg span{cursor:pointer;padding:6px 12px;border-radius:20px;border:1px solid #ffffff2e;user-select:none;transition:.3s}
+.lg span:hover{background:#ffffff14}
+.sc:after{content:"";position:absolute;left:34px;bottom:56px;width:130px;height:175px;z-index:0;opacity:.2;pointer-events:none;transform-origin:50% 100%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 260'%3E%3Cg fill='%235BE08F'%3E%3Cpath d='M99 200C60 195 38 170 30 140C65 142 92 165 99 200Z'/%3E%3Cpath d='M100 170C140 165 162 140 170 110C135 112 108 135 100 170Z'/%3E%3Cpath d='M99 130C65 125 48 105 42 80C72 82 93 100 99 130Z'/%3E%3Cpath d='M101 100C135 95 150 75 156 52C128 54 107 72 101 100Z'/%3E%3Cpath d='M104 22C92 40 96 56 104 62C112 54 114 38 104 22Z'/%3E%3C/g%3E%3Cpath d='M100 250C98 190 96 120 104 20' stroke='%235BE08F' stroke-width='4' fill='none'/%3E%3C/svg%3E") no-repeat center/contain}
+.in:after{animation:sw 7s ease-in-out infinite alternate}
+@keyframes sw{to{transform:rotate(5deg)}}
+.lens{position:absolute!important;right:-12%;top:50%;transform:translateY(-50%);width:min(80vw,440px);aspect-ratio:1;border-radius:50%;z-index:0!important;pointer-events:none;opacity:.75;background:radial-gradient(circle at 32% 28%,#ffffff28,transparent 38%),radial-gradient(circle,#0E3524d0 0 62%,#0E352400 63%);box-shadow:0 0 0 2px #ffffff30,inset 0 0 70px #5BE08F40}
+.lens:before{content:"";position:absolute;inset:-4%;border-radius:50%;background:repeating-conic-gradient(#ffffff66 0 .5deg,transparent .5deg 5deg);-webkit-mask:radial-gradient(circle,transparent 66%,#000 67% 71%,transparent 72%);mask:radial-gradient(circle,transparent 66%,#000 67% 71%,transparent 72%);animation:spin 70s linear infinite paused}
+.in .lens:before{animation-play-state:running}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lens:after{content:"";position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle at 30% 35%,#B591FF66 0 9%,#B591FF22 10% 13%,transparent 14%),radial-gradient(circle at 62% 28%,#5BE08F66 0 7%,transparent 8%),radial-gradient(circle at 55% 65%,#FFC83D55 0 10%,#FFC83D1a 11% 14%,transparent 15%),radial-gradient(circle at 25% 70%,#5BE08F55 0 5%,transparent 6%),radial-gradient(circle at 75% 60%,#B591FF55 0 4%,transparent 5%)}
+h1{background:linear-gradient(110deg,#fff 30%,var(--leaf));-webkit-background-clip:text;background-clip:text;color:transparent}
+#md{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:20px;background:#050d09cc}#md[hidden]{display:none}
+.mc{max-width:420px;background:#0F2A1D;border:1px solid #ffffff2a;border-radius:24px;padding:24px;box-shadow:0 20px 60px #000a}
+.mc h3{font:800 20px Unbounded,sans-serif;margin:0 0 10px}.mc p{margin:0 0 12px;color:var(--mut);font-size:15px}.mc b{color:var(--gold)}.mc .tm{color:var(--ink)}.mc .sm{font-size:12px;margin:0}
+.bt{display:flex;gap:10px;margin:16px 0 10px}.bt button{flex:1;border:0;border-radius:30px;padding:12px;font:700 15px "Golos Text",sans-serif;cursor:pointer;background:#ffffff1a;color:var(--ink)}.bt #go{background:var(--gold);color:#10201A}
+.dt{margin-top:20px;font-size:14px;max-width:520px}
+.dt summary{cursor:pointer;color:var(--gold);font-weight:600}
+.dt table{width:100%;border-collapse:collapse;margin:12px 0}
+.dt th,.dt td{padding:7px 6px;border-bottom:1px solid #ffffff22;text-align:right}
+.dt th:first-child,.dt td:first-child{text-align:left}
+.dt th{color:var(--mut);font-weight:600}
+.dt p{color:var(--mut);font-size:12px;margin:0}
+@media (hover:none),(max-width:700px){
+.row>div,.top,#kp{backdrop-filter:none;-webkit-backdrop-filter:none}
+.row>div,.top{background:#0F2A1D99}
+#kp{background:#0B1A12ee}
+body:after{display:none}}
+@media(prefers-reduced-motion:reduce){
+*,*:before{animation:none!important}}
+@media print{
+#pl,#nv,#kp,.bg,body:after{display:none}
+body{background:#fff;color:#000}}
+@media(prefers-reduced-motion:reduce){
+*{transition:none!important}
+html{scroll-behavior:auto}}
+</style></head><body>
+<div class="bg" id="bg"></div><canvas id="cv" aria-hidden="true"></canvas><div id="pb"></div><div id="nv" aria-hidden="true"></div><div id="kp"><span>Средний балл ЦЭ <b>81,2</b></span><span>Выше 80 баллов <b>69,2%</b></span><span>Дипломов олимпиад <b>48</b></span></div><noscript><p style="padding:20px">Для просмотра дашборда включите JavaScript.</p></noscript>
+<button id="pl" aria-label="Запустить показ">▶ Показать ролик</button>
+
+<section class="sc" data-bg="#0B1A12,#14402A">
+<span class="bd">🧬 Номинация «Педагог сквозь цифру»</span>
+<p class="s">СШ № 31 имени Л. Г. Клецкого, Гродно</p>
+<h1>Светлана Викторовна Павловская</h1><div class="lens" aria-hidden="true"></div><div class="dna" id="dna" aria-hidden="true"></div><div class="hint">Листайте вниз ↓</div>
+<p class="s" style="margin-top:18px;font-size:20px">Учитель биологии. Её успех — это люди, у которых есть цифры.</p></section>
+
+<section class="sc" data-bg="#0B1A12,#17482C">
+<h2 id="h2y">ЦЭ по биологии 2026</h2><div class="seg" role="group" aria-label="Год"><button data-y="2025">2025</button><button data-y="2026" class="a">2026</button></div><p class="s" id="sy">13 выпускников сдавали экзамен. У 9 из них — больше 80 баллов.</p>
+<div class="dots" id="dots"></div>
+<div class="row"><div><div class="n" id="k1" data-n="69.2" data-d="1" data-s="%">0</div><p>выпускников набрали выше 80 баллов</p></div>
+<div><div class="n" id="k2" data-n="100">0</div><p>наивысший балл на экзамене</p></div></div></section>
+
+<section class="sc" data-bg="#0B1A12,#1D3F6B">
+<h2>Средний балл на ЦЭ</h2><p class="s">Рост за год: +1,8 балла</p>
+<svg viewBox="0 0 320 240"><g id="b1"></g></svg></section>
+
+<section class="sc" data-bg="#1B1040,#3A2380">
+<h2>Лучшие результаты ЦЭ</h2><p class="s">Баллы выпускников 2026 и 2025</p>
+<div class="top" style="transition-delay:.1s"><span>Кирилл Шейбак, Анастасия Шишко · 2026</span><b>100</b></div>
+<div class="top" style="transition-delay:.4s"><span>Ульяна Халуповская · 2026</span><b>99</b></div>
+<div class="top" style="transition-delay:.7s"><span>Дарья Авдей, Марта Иодковская, Юлия Лукьяненко, Екатерина Мисник · 2025</span><b>98</b></div>
+<div class="top" style="transition-delay:1s"><span>Артём Остаух · 2025</span><b>94</b></div></section>
+
+<section class="sc" data-bg="#0B1A12,#1D5A3A">
+<h2>Итоговая отметка по биологии</h2><p class="s">Средний балл по годам</p>
+<svg viewBox="0 0 320 240"><g id="b2"></g></svg>
+<div class="row"><div><div class="n" data-n="9.5" data-d="1">0</div><p>средняя экзаменационная отметка, +1,6</p></div>
+<div><div class="n" data-n="92.3" data-d="1" data-s="%">0</div><p>получили отметки высокого уровня</p></div></div></section>
+
+<section class="sc" data-bg="#3A0F2A,#7A1F55">
+<h2>Повысили годовую отметку на экзамене</h2><p class="s">Доля учащихся по годам. 2026: 12 из 13</p>
+<svg viewBox="0 0 320 240"><g id="b3"></g></svg></section>
+
+<section class="sc" data-bg="#3A2A06,#6B4B0E">
+<h2>Олимпиады</h2><p class="s">Дипломы учеников по уровням. Нажмите на степень, чтобы выделить её.</p>
+<div id="ol"></div>
+<div class="lg"><span style="--c:var(--gold)">I степень</span><span style="--c:var(--stain)">II степень</span><span style="--c:var(--leaf)">III степень</span></div></section>
+
+<section class="sc" data-bg="#0B1A12,#2A2060">
+<h2>Республиканский уровень</h2><p class="s">Ученики на заключительном этапе</p>
+<div class="tl">
+<div style="transition-delay:.1s"><em>2018/19 и 2020/21</em>Надежда Ушаповская — I степень, оба раза</div>
+<div style="transition-delay:.5s"><em>2022/23</em>Антон Конопацкий — III степень</div>
+<div style="transition-delay:.9s"><em>2023/24</em>Антон Конопацкий — II степень</div>
+<div style="transition-delay:1.3s"><em>2024/25</em>Антон Конопацкий — I степень на областном этапе</div>
+<div style="transition-delay:1.7s"><em>2025/26</em>Ульяна Халуповская — II степень на областном этапе</div></div></section>
+
+<section class="sc" data-bg="#0B1A12,#14402A">
+<svg class="sp" viewBox="0 0 120 120" aria-hidden="true"><path class="st" d="M60 116C60 84 58 60 62 30"/><path class="lf" d="M61 72C86 72 96 56 99 40C76 40 62 52 61 72Z" style="transform-origin:0 100%"/><path class="lf" d="M60 88C38 88 28 75 24 60C46 60 59 70 60 88Z" style="transform-origin:100% 100%"/><circle cx="62" cy="26" r="9"/></svg><h1>За каждой цифрой — ученик.</h1>
+<p class="s" style="margin-top:20px;font-size:20px">Спасибо, Светлана Викторовна.</p>
+<details class="dt"><summary>Данные и методика</summary><table><tr><th>Показатель</th><th>2025</th><th>2026</th></tr><tr><td>Сдавали ЦЭ</td><td>21</td><td>13</td></tr><tr><td>Средний балл ЦЭ</td><td>79,4</td><td>81,2</td></tr><tr><td>Выше 80 баллов</td><td>12 (57,1%)</td><td>9 (69,2%)</td></tr><tr><td>Итоговая отметка</td><td>8,9</td><td>9,0</td></tr><tr><td>Повысили отметку</td><td>90,4%</td><td>92,3%</td></tr></table><p>Источники: справки учителя об итогах года и списки победителей олимпиад. Доли повысивших отметку за 2023 и 2024 годы рассчитаны как 100% минус доля подтвердивших. Всего дипломов олимпиад: район 31, область 12, республика 5.</p></details></section>
+
+<div id="md" hidden role="dialog" aria-modal="true" aria-labelledby="mt"><div class="mc"><h3 id="mt">Это не видеопрезентация</h3><p>Сейчас страница сама прокрутится по всем сценам. Это просто показ сайта, а не видеоролик с защитой проекта. Видеопрезентацию (до 3 минут, с рассказом о технологиях и о выборе педагога) нужно записать отдельно.</p><p class="tm">Время просмотра: <b id="tm"></b></p><div class="bt"><button id="go">Запустить</button><button id="no">Отмена</button></div><p class="sm">Чтобы остановить показ, нажмите на экран.</p></div></div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},sc=[].slice.call(document.querySelectorAll(".sc"));
+var D={2026:{n:13,hi:9,g:2,p:69.2,m:100,s:"13 выпускников сдавали экзамен. У 9 из них — больше 80 баллов."},2025:{n:21,hi:12,g:4,p:57.1,m:98,s:"21 выпускник сдавал экзамен. У 12 из них — больше 80 баллов."}};
+function setYear(y,a){var o=D[y],h="";for(var i=0;i<o.n;i++)h+='<i class="'+(i<o.g?"g":i<o.hi?"on":"o")+'" style="transition-delay:'+i*.08+'s;animation-delay:'+i*.04+'s"></i>';$("#dots").innerHTML=h;$("#h2y").textContent="ЦЭ по биологии "+y;$("#sy").textContent=o.s;$("#k1").dataset.n=o.p;$("#k2").dataset.n=o.m;if(a){cnt($("#k1"));cnt($("#k2"))}[].forEach.call(document.querySelectorAll(".seg button"),function(b){b.classList.toggle("a",b.dataset.y==y)})}
+setYear(2026);[].forEach.call(document.querySelectorAll(".seg button"),function(b){b.onclick=function(){setYear(b.dataset.y,1)}});
+function bars(id,a,max,mn,fmt){var g="",w=320/a.length,bw=w*.62;a.forEach(function(r,i){var h=(r[1]-mn)/(max-mn)*150+30,x=i*w+(w-bw)/2;
+g+='<rect class="bar" x="'+x+'" y="'+(190-h)+'" width="'+bw+'" height="'+h+'" rx="10" fill="'+r[2]+'" style="transition-delay:'+i*.18+'s"/><text class="v" x="'+(x+bw/2)+'" y="'+(180-h)+'" text-anchor="middle">'+fmt(r[1])+'</text><text x="'+(x+bw/2)+'" y="214" text-anchor="middle">'+r[0]+'</text>'});$(id).innerHTML=g}
+var c=function(v){return String(v).replace(".",",")};
+var dn="";for(var k=0;k<16;k++)dn+='<div class="rg" style="animation-delay:-'+(k*.2).toFixed(1)+'s"><i></i><u></u><i></i></div>';$("#dna").innerHTML=dn;
+bars("#b1",[["2025",79.4,"#7C9DD6"],["2026",81.2,"#5BE08F"]],82,78,c);
+bars("#b2",[["2023",8.6,"#7FD8A8"],["2024",7.9,"#7FD8A8"],["2025",8.9,"#7FD8A8"],["2026",9.0,"#FFC83D"]],9.2,7.5,c);
+bars("#b3",[["2023",58.3,"#FF9DB5"],["2024",85,"#FF9DB5"],["2025",90.4,"#FF9DB5"],["2026",92.3,"#FFC83D"]],95,50,function(v){return c(v)+"%"});
+var L=[["Район",8,13,10],["Область",4,2,6],["Республика",3,1,1]],o="";
+L.forEach(function(r){var t=r[1]+r[2]+r[3];o+='<div style="display:flex;justify-content:space-between"><span>'+r[0]+'</span><b>'+t+'</b></div><div class="hb">'+[[r[1],"var(--gold)"],[r[2],"var(--stain)"],[r[3],"var(--leaf)"]].map(function(x){return'<b data-w="'+x[0]/t*100+'" style="background:'+x[1]+'">'+x[0]+'</b>'}).join("")+'</div>'});$("#ol").innerHTML=o;
+function cnt(e){var n=+e.dataset.n,dd=+e.dataset.d||0,s=e.dataset.s||"",t0;
+function f(t){t0=t0||t;
+var p=Math.min((t-t0)/1300,1);e.textContent=(n*(1-Math.pow(1-p,3))).toFixed(dd).replace(".",",")+s;if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+function bg(s){var p=s.dataset.bg.split(",");$("#bg").style.background="radial-gradient(120% 80% at 80% 10%,"+p[1]+","+p[0]+" 70%)"}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){var s=x.target;if(x.isIntersecting){bg(s);s.classList.add("in");s.querySelectorAll("[data-n]").forEach(cnt);s.querySelectorAll("[data-w]").forEach(function(b){b.style.width=b.dataset.w+"%"})}else{s.classList.remove("in");s.querySelectorAll("[data-w]").forEach(function(b){b.style.width=0})}})},{threshold:.6});
+sc.forEach(function(s){io.observe(s)});
+var nv=$("#nv"),cur=0;sc.forEach(function(s,i){var d=document.createElement("i");d.onclick=function(){s.scrollIntoView()};nv.appendChild(d);new IntersectionObserver(function(es){if(es[0].isIntersecting){cur=i;document.body.classList.toggle("k",i>0);[].forEach.call(nv.children,function(e,j){e.className=j===i?"a":""})}},{threshold:.6}).observe(s)});
+document.addEventListener("keydown",function(e){var k=e.key;if(k=="ArrowDown"||k=="PageDown"||k==" "){e.preventDefault();sc[Math.min(cur+1,sc.length-1)].scrollIntoView()}if(k=="ArrowUp"||k=="PageUp"){e.preventDefault();sc[Math.max(cur-1,0)].scrollIntoView()}});
+[].forEach.call(document.querySelectorAll(".lg span"),function(s,i){s.tabIndex=0;s.setAttribute("role","button");s.onclick=function(){var o=$("#ol");o.dataset.f=o.dataset.f==i?"":i;if(navigator.vibrate)navigator.vibrate(8)};s.onkeydown=function(e){if(e.key=="Enter")s.click()}});
+var tl=null,tq=0;document.addEventListener("mousemove",function(e){if(tq)return;tq=1;
+var cX=e.clientX,cY=e.clientY,tg=e.target;requestAnimationFrame(function(){tq=0;
+var t=tg.closest&&tg.closest(".row>div");if(tl&&tl!==t)tl.style.transform="";tl=t;if(t){var e={clientX:cX,clientY:cY};
+var r=t.getBoundingClientRect();t.style.transform="perspective(600px) rotateY("+((e.clientX-r.left)/r.width-.5)*10+"deg) rotateX("+(.5-(e.clientY-r.top)/r.height)*10+"deg)"}});});
+var cv=$("#cv"),cx=cv.getContext("2d"),W,H,P=[],mx=-9e3,my=-9e3,CL=["91,224,143","255,200,61","181,145,255"];
+function rs(){var r=Math.min(window.devicePixelRatio||1,innerWidth<700?1.25:1.5);cv.width=innerWidth*r;cv.height=innerHeight*r;cx.setTransform(r,0,0,r,0,0);W=innerWidth;H=innerHeight}
+rs();addEventListener("resize",rs);addEventListener("pointermove",function(e){mx=e.clientX;my=e.clientY});
+for(var q=0;q<(innerWidth<600?24:46);q++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:3+Math.random()*7,c:CL[q%3]});
+function fr(){cx.clearRect(0,0,W,H);P.forEach(function(a,i){var dx=a.x-mx,dy=a.y-my,d=Math.sqrt(dx*dx+dy*dy);if(d<130&&d>0){a.x+=dx/d*1.4;a.y+=dy/d*1.4}a.x+=a.vx;a.y+=a.vy;if(a.x<-20)a.x=W+20;if(a.x>W+20)a.x=-20;if(a.y<-20)a.y=H+20;if(a.y>H+20)a.y=-20;
+for(var j=i+1;j<P.length;j++){var b=P[j],ex=a.x-b.x,ey=a.y-b.y,l=Math.sqrt(ex*ex+ey*ey);if(l<115){cx.strokeStyle="rgba(91,224,143,"+(.22*(1-l/115))+")";cx.lineWidth=1;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}
+cx.beginPath();cx.arc(a.x,a.y,a.r,0,6.283);cx.fillStyle="rgba("+a.c+",.14)";cx.fill();cx.strokeStyle="rgba("+a.c+",.45)";cx.stroke();cx.beginPath();cx.arc(a.x+a.r*.2,a.y-a.r*.15,a.r*.32,0,6.283);cx.fillStyle="rgba("+a.c+",.55)";cx.fill()});
+if(!document.hidden)requestAnimationFrame(fr)}
+var lt=0,sl=0,fc=0,pend=0,mo=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function loop(t){pend=0;if(document.hidden)return;pend=1;requestAnimationFrame(loop);
+var dt=t-lt;if(dt<14)return;lt=t;
+var k=Math.min(dt,40)/16.7;if(dt>26)sl++;if(++fc>=90){if(sl>30&&P.length>12)P.length=Math.floor(P.length*.65);sl=0;fc=0}
+cx.clearRect(0,0,W,H);
+P.forEach(function(a){var dx=a.x-mx,dy=a.y-my,d=Math.sqrt(dx*dx+dy*dy);if(d<130&&d>0){a.x+=dx/d*1.4*k;a.y+=dy/d*1.4*k}a.x+=a.vx*k;a.y+=a.vy*k;if(a.x<-20)a.x=W+20;if(a.x>W+20)a.x=-20;if(a.y<-20)a.y=H+20;if(a.y>H+20)a.y=-20});
+cx.beginPath();for(var i=0;i<P.length;i++)for(var j=i+1;j<P.length;j++){var a=P[i],b=P[j],ex=a.x-b.x,ey=a.y-b.y;if(ex*ex+ey*ey<12100){cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y)}}
+cx.strokeStyle="rgba(91,224,143,.13)";cx.lineWidth=1;cx.stroke();
+P.forEach(function(a){cx.beginPath();cx.arc(a.x,a.y,a.r,0,6.283);cx.fillStyle="rgba("+a.c+",.16)";cx.fill();cx.beginPath();cx.arc(a.x+a.r*.2,a.y-a.r*.15,a.r*.32,0,6.283);cx.fillStyle="rgba("+a.c+",.6)";cx.fill()})}
+if(!mo){pend=1;requestAnimationFrame(loop);document.addEventListener("visibilitychange",function(){if(!document.hidden&&!pend){lt=0;pend=1;requestAnimationFrame(loop)}})}
+var T=[9,16,12,16,16,14,16,16,10],run=0,tm;
+function go(i){if(!run)return;if(i>=sc.length){stop();return}sc[i].scrollIntoView({behavior:"smooth"});
+$("#pb").style.transition="none";$("#pb").style.width=(i/sc.length*100)+"%";setTimeout(function(){$("#pb").style.transition="width "+T[i]+"s linear";$("#pb").style.width=((i+1)/sc.length*100)+"%"},50);
+tm=setTimeout(function(){go(i+1)},T[i]*1000)}
+function stop(){run=0;clearTimeout(tm);$("#pl").style.display="";$("#pb").style.width=0}
+$("#pl").onclick=function(){var s=T.reduce(function(a,b){return a+b},0);$("#tm").textContent=Math.floor(s/60)+" мин "+s%60+" с";$("#md").hidden=false;$("#go").focus()};
+$("#go").onclick=function(){$("#md").hidden=true;setTimeout(function(){run=1;$("#pl").style.display="none";go(0)},50)};
+$("#no").onclick=function(){$("#md").hidden=true};
+document.addEventListener("click",function(e){if(run&&e.target.id!="pl")stop()});
+})();
+</script></body></html>
